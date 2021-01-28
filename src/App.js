@@ -6,13 +6,13 @@ import ListadoNoticias from './components/ListadoNoticias';
 function App() {
 
   // definir la categoria y noticias
-  const [categoria, guardarCategoria] = useState('');
+  const [categoria, guardarCategoria] = useState('general');
   const [noticias, guardarNoticias] = useState([]);
 
   useEffect(() => {
 
     const consultarAPI = async () => {
-      const url = `https://newsapi.org/v2/top-headlines?country=nz&category=${categoria}&apiKey=06009906b5724f17a480c7223c1771ca`;
+      const url = `https://saurav.tech/NewsAPI/top-headlines/category/${categoria}/au.json`;
       const respuesta = await fetch(url);
       const noticias = await respuesta.json();
 
